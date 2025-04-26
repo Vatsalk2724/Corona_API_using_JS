@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>COVID-19 Global Statistics</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="data"></div>
-    <script>
-        fetch('https://disease.sh/v3/covid-19/all')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('data').innerHTML=`
-            <div>Cases: ${data.cases}</div>
-            <div>Death: ${data.deaths}</div>
-            <div>Recovered: ${data.recovered}</div>    
-            <div>Active: ${data.active}</div>
-            `;
-
-        }).catch((err)=>console.log("error:",err));
-    </script>
+    <div id="data">
+        <h1 class="title">COVID-19 Global Statistics</h1>
+        <div class="stat-card">
+            <h2>Total Cases</h2>
+            <div class="number" id="cases"></div>
+        </div>
+        <div class="stat-card">
+            <h2>Total Deaths</h2>
+            <div class="number" id="deaths"></div>
+        </div>
+        <div class="stat-card">
+            <h2>Total Recovered</h2>
+            <div class="number" id="recovered"></div>
+        </div>
+        <div class="stat-card">
+            <h2>Active Cases</h2>
+            <div class="number" id="active"></div>
+        </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
